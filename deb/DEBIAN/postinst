@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # install consul api
-easy_install pip
 pip install python-consul
 
 # define consul k/v
@@ -12,5 +11,6 @@ python /usr/sbin/init_kv.py
 service keepalived start
 
 # run consul-temaplate
+touch /var/run/consul-template
 consul-template -consul ${CONSUL_ADDR:-consul}:${CONSUL_PORT:-8500} \
     -template "/etc/keepalived/keepalived.ctmpl:/etc/keepalived/keepalived.conf:service keepalived reload" -pid-file /var/run/consul-template &
