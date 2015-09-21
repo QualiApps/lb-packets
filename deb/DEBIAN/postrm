@@ -1,0 +1,2 @@
+service keepalived stop
+kill -9 $(cat /var/run/consul-template)
