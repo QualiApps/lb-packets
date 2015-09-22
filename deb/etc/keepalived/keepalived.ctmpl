@@ -18,7 +18,7 @@ virtual_server {{key "services/vip"}} {{$port}} {
     real_server {{.Address}} {{.Port}}  {
         weight {{$pairs.weight.Value}}{{if .Tags.Contains "udp"}}
         MISC_CHECK {
-            misc_path {{$pairs.misc_check.Value}} {{.Address}} {{.Port}}
+            misc_path "{{$pairs.misc_check.Value}} {{.Address}} {{.Port}}"
         }{{else if $pairs.tcp_check}}
         TCP_CHECK {
             connect_timeout {{$pairs.tcp_check.Value}}
