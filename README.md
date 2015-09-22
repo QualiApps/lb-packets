@@ -24,3 +24,7 @@ Initialize keepalived + LVS-DR + consul-template
 `dpkg -i DEB_PACKAGE`
 
 `apt-get update & -f install`
+
+#### Create package
+
+`dpkg -b deb iotlb_v0.1.deb`

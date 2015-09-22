@@ -1,6 +1,6 @@
 Package: iotlb
 Version: 0.1
 Architecture: all
-Depends: keepalived (>= 1.2.7), ipvsadm (>= 1.26), pip (>= 1.5.4)
+Depends: keepalived (>= 1.2.7), ipvsadm (>= 1.26), python-pip (>= 1.5.4)
 Maintainer: Yury Kavaliou <yury_kavaliou@epam.com>
 Description: loadbalancing
