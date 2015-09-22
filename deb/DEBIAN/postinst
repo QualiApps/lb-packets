@@ -7,6 +7,10 @@ pip install python-consul
 # requeried - env CONSUL_ADDR
 python /usr/sbin/init_kv.py
 
+# define a first config
+consul-template -consul ${CONSUL_ADDR:-consul}:${CONSUL_PORT:-8500} \
+    -template "/etc/keepalived/keepalived.ctmpl:/etc/keepalived/keepalived.conf" -once
+
 # run keepalived
 service keepalived start
 
