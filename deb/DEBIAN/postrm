@@ -1,2 +1,2 @@
 service keepalived stop
-kill -9 $(cat /var/run/consul-template)
+kill -9 $(cat /var/run/consul-template) 2>/dev/null || exit 0
